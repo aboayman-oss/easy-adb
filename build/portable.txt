@@ -1,0 +1,7 @@
+Easy ADB - portable edition
+
+This file tells Easy ADB to keep everything in the "Easy ADB Data" folder next to it:
+settings, remembered phones and the Android tools it downloads on first launch.
+Nothing is written to AppData, so you can move this whole folder or run it from a USB stick.
+
+Delete this file to make Easy ADB use the normal per-user app-data folder instead.

@@ -1,0 +1,70 @@
+{
+  "name": "easy-adb",
+  "productName": "Easy ADB",
+  "version": "1.0.0",
+  "description": "Everyday Android power tools with zero setup — file transfer, debloating, app install, screen mirroring and more.",
+  "main": "./out/main/index.js",
+  "author": "aboayman-oss",
+  "homepage": "https://github.com/aboayman-oss/easy-adb#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aboayman-oss/easy-adb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aboayman-oss/easy-adb/issues"
+  },
+  "keywords": [
+    "android",
+    "adb",
+    "scrcpy",
+    "debloat",
+    "screen-mirroring",
+    "file-transfer",
+    "electron",
+    "windows"
+  ],
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "build": "electron-vite build",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run typecheck && npm test && npm run build",
+    "dist": "npm run build && electron-builder --win --publish never && npm run pack:portable",
+    "dist:portable": "npm run build && npm run pack:portable",
+    "pack:portable": "electron-builder --dir --win --publish never --config electron-builder.portable.yml && node scripts/make-portable-zip.cjs",
+    "dist:dir": "npm run build && electron-builder --dir --publish never"
+  },
+  "dependencies": {
+    "bonjour-service": "^1.3.0",
+    "qrcode": "^1.5.4",
+    "tar": "^7.4.3",
+    "yauzl": "^3.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^22.15.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/yauzl": "^3.4.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "clsx": "^2.1.1",
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "lucide-react": "^1.79.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1",
+    "zustand": "^5.0.8"
+  }
+}

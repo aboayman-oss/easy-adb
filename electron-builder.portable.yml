@@ -1,0 +1,8 @@
+# Portable edition: the same app plus a portable.txt marker (see src/main/portable.ts).
+# Built as a folder, then zipped by scripts/make-portable-zip.cjs.
+extends: electron-builder.yml
+directories:
+  output: dist/portable
+extraFiles:
+  - from: build/portable.txt
+    to: portable.txt

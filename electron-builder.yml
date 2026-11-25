@@ -1,0 +1,30 @@
+appId: app.easyadb.desktop
+productName: Easy ADB
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**
+  - package.json
+  - '!**/*.map'
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+# Installer: per-user (no admin rights needed), lets people pick the folder.
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: Easy-ADB-Setup-${version}.${ext}
+  shortcutName: Easy ADB
+  uninstallDisplayName: Easy ADB
+  # Keep settings and the downloaded engine on uninstall (reinstalling stays instant).
+  deleteAppDataOnUninstall: false
+# The portable zip is built from electron-builder.portable.yml (see "dist:portable" in package.json).
+mac:
+  target: [dmg]
+  category: public.app-category.utilities
+linux:
+  target: [AppImage, deb]
+  category: Utility
+npmRebuild: false

@@ -1,0 +1,19 @@
+name: Feature request
+description: Suggest something Easy ADB could do (or do better).
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the task or problem in everyday terms.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could Easy ADB help?
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model and Android version (if relevant)

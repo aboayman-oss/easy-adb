@@ -1,0 +1,56 @@
+name: Bug report
+description: Something in Easy ADB didn't work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report this. The details below help reproduce it quickly.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Connect the phone over USB
+        2. Open Apps & Debloat
+        3. ...
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model and Android version
+      placeholder: e.g. Galaxy S24 Ultra, Android 15
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection
+      options:
+        - USB cable
+        - Wi-Fi
+        - Both / not sure
+  - type: input
+    id: version
+    attributes:
+      label: Easy ADB version and edition
+      description: Shown in Settings → About.
+      placeholder: e.g. 1.0.0, installer (or portable)
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: e.g. Windows 11 23H2
+  - type: textarea
+    id: log
+    attributes:
+      label: Activity Log
+      description: Open the Activity Log (bottom-left) and paste the lines around the problem. Remove anything you'd rather not share.
+      render: text
