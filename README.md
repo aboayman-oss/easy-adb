@@ -8,7 +8,6 @@
 Copy files, clean up bloatware, install split APK bundles, mirror your screen and more,<br/>
 without installing SDKs, editing `PATH` or opening a terminal.
 
-[![CI](https://github.com/aboayman-oss/easy-adb/actions/workflows/ci.yml/badge.svg)](https://github.com/aboayman-oss/easy-adb/actions/workflows/ci.yml)
 [![Latest release](https://img.shields.io/github/v/release/aboayman-oss/easy-adb?label=download&color=3d63fb)](https://github.com/aboayman-oss/easy-adb/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/aboayman-oss/easy-adb/total?color=22c55e)](https://github.com/aboayman-oss/easy-adb/releases)
 [![License: MIT](https://img.shields.io/github/license/aboayman-oss/easy-adb?color=8b5cf6)](LICENSE)
@@ -30,7 +29,7 @@ Grab the latest version from the [**Releases page**](https://github.com/aboayman
 On first launch Easy ADB downloads Google's official Android platform-tools and scrcpy (about 40 MB), checks their checksums, and is ready to go. You never have to do it again.
 
 > [!NOTE]
-> Easy ADB isn't code-signed yet, so Windows SmartScreen may say *"Windows protected your PC"*. Click **More info → Run anyway**. The app is built from this repository by [GitHub Actions](https://github.com/aboayman-oss/easy-adb/actions/workflows/release.yml).
+> Easy ADB isn't code-signed yet, so Windows SmartScreen may say *"Windows protected your PC"*. Click **More info → Run anyway**. Release files are built from the tagged source in this repository with `npm run dist`.
 
 **Requirements:** Windows 10 or 11 (64-bit) and an Android phone. USB works with any Android version that has USB debugging. Wireless pairing needs Android 11 or newer.
 
@@ -111,7 +110,7 @@ src/
 tests/           vitest suites
 ```
 
-Releases are built by GitHub Actions: push a `v*` tag and the [release workflow](.github/workflows/release.yml) builds the installer and portable zip and attaches them to a GitHub release.
+Releases: `npm run dist` builds `dist/Easy-ADB-Setup-<version>.exe` and `dist/Easy-ADB-Portable-<version>.zip`. With GitHub Actions enabled, pushing a `v*` tag runs the [release workflow](.github/workflows/release.yml), which builds both and attaches them to a GitHub release.
 
 ## Contributing
 
